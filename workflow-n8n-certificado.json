@@ -1,0 +1,264 @@
+{
+  "name": "My workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "gerar-certificado",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        0,
+        -16
+      ],
+      "id": "f6f622c0-f3f0-4db4-a666-3ca3d185a6ff",
+      "name": "Webhook",
+      "webhookId": "3d0d53a3-af64-4859-847a-654a9d9d7580"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "6990db1a-5da0-4eb4-bf69-91812558c7b1",
+                    "leftValue": "={{ $json.body.template_escolhido }}",
+                    "rightValue": "Moderno",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "657a39f6-3f25-4c5a-9e68-f7d2728a5797",
+                    "leftValue": "={{ $json.body.template_escolhido }}",
+                    "rightValue": "Clássico",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "f7a60950-2663-41cb-957f-246e25f9cb71",
+                    "leftValue": "={{ $json.body.template_escolhido }}",
+                    "rightValue": "Elegante",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.4,
+      "position": [
+        176,
+        -32
+      ],
+      "id": "941ca538-8bea-49b8-b0d8-15893da889b1",
+      "name": "Switch"
+    },
+    {
+      "parameters": {
+        "documentTemplateId": "7950BDFE-0A1F-4997-BA0C-659D93F4AA4D",
+        "payload": "={\n  \"nome_aluno\": \"{{ $json.body.nome_aluno }}\",\n  \"curso\": \"{{ $json.body.curso }}\",\n  \"carga_horaria\": \"{{ $json.body.carga_horaria }}\",\n  \"data_conclusao\": \"{{ $json.body.data_conclusao }}\",\n  \"assinatura\": \"{{ $json.body.assinatura }}\",\n  \"cor_texto\": \"{{ $json.body.cor_texto }}\",\n  \"instituto\": \"{{ $json.body.instituto }}\"\n}"
+      },
+      "type": "n8n-nodes-pdfmonkey.pdfMonkey",
+      "typeVersion": 1,
+      "position": [
+        464,
+        -176
+      ],
+      "id": "377e0800-87de-47ac-b3a7-f8840780ceb6",
+      "name": "PDFMonkey1",
+      "credentials": {
+        "pdfMonkeyApi": {
+          "id": "CSgj3ldxzV5SgF8s",
+          "name": "PDFMonkey account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentTemplateId": "96DE9792-9004-402E-AE0C-EA4B3D73B489",
+        "payload": "={\n  \"nome_aluno\": \"{{ $json.body.nome_aluno }}\",\n  \"curso\": \"{{ $json.body.curso }}\",\n  \"carga_horaria\": \"{{ $json.body.carga_horaria }}\",\n  \"data_conclusao\": \"{{ $json.body.data_conclusao }}\",\n  \"assinatura\": \"{{ $json.body.assinatura }}\",\n  \"cor_texto\": \"{{ $json.body.cor_texto }}\",\n  \"instituto\": \"{{ $json.body.instituto }}\"\n}"
+      },
+      "type": "n8n-nodes-pdfmonkey.pdfMonkey",
+      "typeVersion": 1,
+      "position": [
+        464,
+        -16
+      ],
+      "id": "95323093-d14c-4cf5-befa-4872e2803886",
+      "name": "PDFMonkey2",
+      "credentials": {
+        "pdfMonkeyApi": {
+          "id": "CSgj3ldxzV5SgF8s",
+          "name": "PDFMonkey account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentTemplateId": "43839869-E4D1-4635-B8FC-949FE384D881",
+        "payload": "={\n  \"nome_aluno\": \"{{ $json.body.nome_aluno }}\",\n  \"curso\": \"{{ $json.body.curso }}\",\n  \"carga_horaria\": \"{{ $json.body.carga_horaria }}\",\n  \"data_conclusao\": \"{{ $json.body.data_conclusao }}\",\n  \"assinatura\": \"{{ $json.body.assinatura }}\",\n  \"cor_texto\": \"{{ $json.body.cor_texto }}\",\n  \"instituto\": \"{{ $json.body.instituto }}\"\n}"
+      },
+      "type": "n8n-nodes-pdfmonkey.pdfMonkey",
+      "typeVersion": 1,
+      "position": [
+        464,
+        160
+      ],
+      "id": "299c1b18-0122-4978-83ab-cf94c7ccf0fe",
+      "name": "PDFMonkey3",
+      "credentials": {
+        "pdfMonkeyApi": {
+          "id": "CSgj3ldxzV5SgF8s",
+          "name": "PDFMonkey account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={\n  \"arquivo\": \"{{ $json.document_card.download_url }}\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5,
+      "position": [
+        928,
+        -16
+      ],
+      "id": "76a7f3d7-543a-426b-b225-ff0009bc2894",
+      "name": "Respond to Webhook1"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "PDFMonkey1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "PDFMonkey2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "PDFMonkey3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "PDFMonkey1": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "PDFMonkey2": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "PDFMonkey3": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "availableInMCP": false
+  },
+  "versionId": "767ef5cc-c196-4cf7-a961-605b44e35afd",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "5f4f4e45e4cb5bf2d0da7b84d377e25991cb22a7b60a8a574de9b7e3e0b373c6"
+  },
+  "id": "U9Ffm2Za0xSKi9buoz8bI",
+  "tags": []
+}

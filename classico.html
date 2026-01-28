@@ -1,0 +1,86 @@
+<html>
+<head>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Ingrid+Darling&display=swap');
+  body { margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
+  
+  .container-certificado {
+    width: 1123px; height: 794px;
+    
+
+    background-image: url('https://01ba35100a23ca017a864c336c93d289.cdn.bubble.io/f1769610763430x658953111627139800/imagem_cl%C3%A1ssica.png'); 
+    
+    background-size: cover; position: relative;
+    color: {{ cor_texto }}; 
+    
+  }
+   
+  .texto-instituto {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 45px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #228c81;
+}
+
+.texto-nome {
+  position: absolute;
+  top: 53.5%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 20px;
+  color: #000;
+}
+
+.texto-curso {
+  position: absolute;
+  top: 57%;
+  left: 46%;
+  transform: translateX(-50%);
+  font-size: 20px;
+  color: #000;
+}
+
+.texto-horas {
+  position: absolute;
+  top: 60.5%;
+  left: 20%;
+  font-size: 20px;
+  color: #000;
+}
+
+.texto-data {
+  position: absolute;
+  bottom: 32.5%;
+  left: 25%;
+  font-size: 20px;
+  color: #000;
+}
+
+.texto-assinatura {
+  position: absolute;
+  bottom: 23.5%;
+  left: 45%;
+  font-size: 25px;
+  font-style: italic;  
+  text-align: center;
+  font-family: 'Ingrid Darling', cursive;
+  color: #000;
+}
+
+</style>
+</head>
+<body>
+  <div class="container-certificado">
+    <div class="texto-nome">{{ nome_aluno }}</div>
+    <div class="texto-instituto">Instituto {{ instituto }}</div>
+    <div class="texto-curso">{{ curso }}</div>
+    <div class="texto-horas">{{ carga_horaria }}</div>
+    <div class="texto-data">{{ data_conclusao }}</div>
+    <div class="texto-assinatura">{{ assinatura }}</div>
+  </div>
+</body>
+</html>

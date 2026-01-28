@@ -1,0 +1,88 @@
+<html>
+<head>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Ingrid+Darling&display=swap');
+  body { margin: 0; padding: 0; font-family: 'Helvetica', sans-serif; }
+
+  .container-certificado {
+    width: 1123px; height: 794px;
+    
+    /* --- ATENÇÃO: COLOQUE O LINK DA SUA IMAGEM DO BUBBLE AQUI --- */
+    background-image: url('https://01ba35100a23ca017a864c336c93d289.cdn.bubble.io/f1769551773580x480073213126536400/imagem_elegante.png'); 
+    
+    background-size: cover; position: relative; 
+    color: {{ cor_texto }}; 
+  }
+   
+  .texto-instituto {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 45px;
+  font-weight: bold;
+  color: #335b73;
+}
+
+.texto-nome {
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 40px;
+  font-weight: bold;
+  color: #335b73;
+}
+
+.texto-curso {
+  position: absolute;
+  top: 64%;
+  left: 31%;
+  font-size: 20px;
+  color: #000;
+}
+
+.texto-horas {
+  position: absolute;
+  top: 67.5%;
+  left: 31%;
+  font-size: 20px;
+  color: #000;
+}
+
+.texto-data {
+  position: absolute;
+  bottom: 13%;
+  left: 25%;
+  font-size: 20px;
+  color: #000;
+  text-align: center;
+}
+
+.texto-assinatura {
+  position: absolute;
+  bottom: 13%;
+  right: 25%;
+  font-size: 25px;
+  font-style: italic;  
+  font-family: 'Ingrid Darling', cursive;
+  text-align: center;
+  color: #000;
+  width: 170px;
+  line-height: 1;          /* remove espaço fantasma */
+  transform: translateY(6px); /* AJUSTE FINO VISUAL */
+}
+
+</style>
+</head>
+<body>
+  <div class="container-certificado">
+    <div class="texto-nome">{{ nome_aluno }}</div>
+    <div class="texto-curso">{{ curso }}</div>
+    <div class="texto-horas">{{ carga_horaria }}</div>
+    <div class="texto-data">{{ data_conclusao }}</div>
+    <div class="texto-assinatura">{{ assinatura }}</div>
+  </div>
+  
+</body>
+</html>
